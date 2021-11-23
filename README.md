@@ -3,6 +3,7 @@
 # NGRX
 
 # STEP-1
+
 import reducer from reducer file
 create store in app module key as count and value as counterReducer forRoot({
     count: counterReducer
