@@ -25,6 +25,7 @@ export const reset = createAction('[Counter Component] Reset');
 =======================================================================
 
 # STEP-4
+
 in reducer file create reducer using createReducer method and export reducer 
 import { Action, createReducer, on } from '@ngrx/store';
 import { increment, decrement, reset } from './counter.actions';
@@ -44,11 +45,13 @@ export function counterReducer(state: any, action: Action) {
 =======================================================================
 
 # STEP-5
+
 in reducer file and intialize the intial state 
 export const initialState = 0;
 =======================================================================
 
 # STEP-6
+
 import Store, Observable, actions from STEP-3 in the component file
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -56,6 +59,7 @@ import { increment, decrement, reset } from '../store/counter.actions';
 =======================================================================
 
 # STEP-7
+
 instantiate store with key defined in STEP-1 
 constructor(private store: Store<{ count: number }>) {
 		this.count$ = store.select('count');
@@ -63,17 +67,20 @@ constructor(private store: Store<{ count: number }>) {
 =======================================================================
 
 # STEP-8
+
 create a variable as observable in component
 count$: Observable<number>;
 =======================================================================
 
   
 # STEP-9
+	
 inside  constructor select store using the key defined in the app module StoreModule.forRoot
 this.count$ = store.select('count');
 =======================================================================
 
 # STEP-10 FINAL STEP
+	
 now in your component, inside methods dispatch the actions 
 import { Component, OnInit } from '@angular/core';
 
@@ -112,6 +119,7 @@ export class MyCounterComponent implements OnInit {
 =======================================================================
 
 # STEP-11 HTML
+	
 <button (click)="increment()">Increment</button>
 
 <div>Current Count: {{ count$ | async }}</div>
